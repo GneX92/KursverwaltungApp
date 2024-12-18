@@ -1,0 +1,26 @@
+{
+  "version": "3.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery-ajax-unobtrusive@3.2.6",
+      "destination": "wwwroot/lib/jquery-ajax-unobtrusive/",
+      "files": [
+        "jquery.unobtrusive-ajax.min.js"
+      ]
+    },
+    {
+      "library": "bootstrap-icons@1.11.3",
+      "destination": "wwwroot/lib/bootstrap-icons/"
+    },
+    {
+      "library": "globalize@1.7.0",
+      "destination": "wwwroot/lib/globalize/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-validation-globalize@0.1.1",
+      "destination": "wwwroot/lib/jquery-validation-globalize/"
+    }
+  ]
+}
