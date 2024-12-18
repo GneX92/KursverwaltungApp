@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kursverwaltung.Models.Kurs>
+﻿@model IEnumerable<Kurs>
 
 @{
     ViewData["Title"] = "Kursverwaltung";
@@ -8,7 +8,7 @@
 
 <table class="table table-borderless justify-content-start" style="text-align:left;">
     <tr>
-        <td style="text-align: right;"><button class="btn btn-primary" asp-action="Create"><i class="bi bi-plus" style=" font-weight: bold; color: white; font-size: 1rem"></i><span style="margin-left: 5px;">Kurs anlegen</span></button></td>
+        <td style="text-align: right;"><button class="btn btn-primary" asp-action="Create"><i class="bi bi-plus-lg" style=" font-weight: bold; color: white; font-size: 1rem"></i><span style="margin-left: 5px;">Kurs anlegen</span></button></td>
         <td>   
             <form asp-action="Upload" enctype="multipart/form-data" >
                 <span class="input-group">
@@ -38,21 +38,22 @@
         </tr>
     </thead>
     <tbody id="tbody">
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Start)
+                @Html.DisplayFor(modelItem => item.Start.Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dauer)
             </td>
             <td>
-                <button class="btn btn-primary" asp-action="Edit" asp-route-id="@item.KursID">Edit</button>
-                <button class="btn btn-primary" asp-action="Details" asp-route-id="@item.KursID">Details</button>
-                <button class="btn btn-primary" asp-action="Delete" asp-route-id="@item.KursID">Delete</button>
+                    <button class="btn btn-primary" asp-action="Edit" asp-route-id="@item.KursID"><i class="bi bi-gear-fill" style=" font-weight: bold; color: white; font-size: 1rem"></i></button>
+                    <button class="btn btn-primary" asp-action="Details" asp-route-id="@item.KursID"><i class="bi bi-card-list" style=" font-weight: bold; color: white; font-size: 1rem"></i></button>
+                    <button class="btn btn-danger" asp-action="Delete" asp-route-id="@item.KursID"><i class="bi bi-trash3-fill" style=" font-weight: bold; color: white; font-size: 1rem"></i></button>
             </td>
         </tr>
 }

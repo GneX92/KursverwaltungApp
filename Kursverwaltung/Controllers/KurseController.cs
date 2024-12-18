@@ -24,7 +24,7 @@ namespace Kursverwaltung.Controllers
         // GET: Kurse
         public IActionResult Index()
         {
-            return View(  _context.Kurse.ToList() );
+            return View( _context.Kurse.ToList() );
         }
 
         // GET: Kurse/Details/5
